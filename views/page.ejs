@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search A NBA Player</title>
+</head>
+<body>
+    <h2>Search an NBA Player!</h2>
+    <form action="/" method="POST">
+        <label for="playerFirstName">
+            First Name:
+        </label>
+        <input id="playerFirstName" name="playerFirstName" type="text" placeholder="Trae">
+        <br>
+        <label for="playerLastName">
+            Last Name:
+        </label>
+        <input id="playerLastName" name="playerLastName" type="text" placeholder="Young">
+        <br>
+        <label for="season">
+            Year:
+        </label>
+        <input id="season" name="season" type="text" placeholder="2021">
+        <br>
+        <input name="submitBtn" type="submit">
+    </form>
+    <br>
+    <div>
+        <% if(!locals.error){ %> 
+            <div>
+                Name: <%= name %>
+            </div>
+            <div>
+                Position: <%= position %>
+            </div>
+            <div>
+                Current Team: <%= team %>
+            </div>
+            <div>
+                Height: <%= height %>
+            </div>
+            <div>
+                Weight: <%= weight %>
+            </div>
+            <br>
+            <div>
+                <%= season %> Stats
+            </div>
+            <div>
+                Points per game: <%= points %>
+            </div>
+            <div>
+                Assists per game: <%= assists %>
+            </div>
+            <div>
+                Rebounds per game: <%= rebounds %>
+            </div>
+            <div>
+                Field goal percentage: <%= fieldGoal %>
+            </div>
+            <div>
+                Three point percentage: <%= threePoint %>
+            </div>
+        <% } %>
+
+        <% if(locals.error){ %> 
+            <div>
+                <%= error %>
+            </div>
+        <% } %>
+    </div>
+</body>
+</html>
